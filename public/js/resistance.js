@@ -14,7 +14,7 @@ $(document).ready(function() {
 
         $.ajax({
             method: "POST",
-            url: "/api/resistance",
+            url: "/resistance",
             data: Resistance
         }).catch((err) => {
             if (err) throw err;

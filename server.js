@@ -52,7 +52,7 @@ app.get("/resistance", (req, res) => {
 });
 
 app.post("/cardio", ({ body }, res) => {
-  Cardio.create(body)
+  db.Cardio.create(body)
     .then(dbCardio => {
       res.json(dbCardio);
     })
@@ -62,7 +62,7 @@ app.post("/cardio", ({ body }, res) => {
 });
 
 app.post("/submit", ({ body }, res) => {
-  Resistance.create(body)
+  db.Resistance.create(body)
     .then(dbResistance => {
       res.json(dbResistance);
     })
