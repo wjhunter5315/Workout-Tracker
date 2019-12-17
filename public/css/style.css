@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-size: 10px;
+}
+
+.grid {
+    display: grid;
+    height: 60vh;
+    grid-template-areas:
+                        "navbar navbar navbar"
+                        "sidebar maincontent maincontent"
+                        "sidebar maincontent maincontent"
+                        "sidebar maincontent maincontent"
+                        "footer footer footer";
+}
+
+.grid-item {
+    border: 1px solid black;
+}
+
+.navbar {
+    background-color: lightseagreen;
+    grid-area: navbar;
+    font-size: 2rem;
+}
+
+.sidebar {
+    background-color: maroon;
+    grid-area: sidebar;
+    
+}
+
+.menu {
+    grid-area: maincontent;
+    text-align: center;
+    background-color: silver;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: yellowgreen;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.resMenu {
+    grid-area: maincontent;
+    text-align: center;
+    font-size: 1rem;
+    background-color: silver;
+}
+
+.cardMenu {
+    grid-area: maincontent;
+    text-align: center;
+    font-size: 1rem;
+    background-color: silver;
+}
