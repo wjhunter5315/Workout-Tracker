@@ -23,13 +23,13 @@ require("./routes/html-routes.js")(app);
 //   res.sendFile(path.join(__dirname + "./public/home.html"));
 // });
 
-db.Cardio.create({})
-  .then(dbCardio => {
-    console.log(dbCardio);
-  })
-  .catch(({message}) => {
-    console.log(message);
-});
+// db.Cardio.create({})
+//   .then(dbCardio => {
+//     console.log(dbCardio);
+//   })
+//   .catch(({message}) => {
+//     console.log(message);
+// });
 
 app.get("/cardio", (req, res) => {
     db.Cardio.find({})

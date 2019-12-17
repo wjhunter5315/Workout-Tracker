@@ -16,4 +16,6 @@ $(document).ready(function() {
     $("#cardPick").on("click", function() {
         loadCard();
     });
+
+
 })

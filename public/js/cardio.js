@@ -1,11 +1,12 @@
 $(document).ready(function() {
-    let Cardio = {
-        name: "",
-        distance: "",
-        duration: "",
-    };
+
 
     function makeCardioWorkout (cardio) {
+        let Cardio = {
+            name: "",
+            distance: "",
+            duration: "",
+        };
         Cardio.name = $("#cardio-name").val();
         Cardio.distance = $("#cardio-sets").val();
         Cardio.duration = $("#cardio-duration").val();
