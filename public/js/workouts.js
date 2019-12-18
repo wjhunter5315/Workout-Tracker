@@ -2,9 +2,9 @@ $(document).ready(function() {
 
     function getCardio (data) {
 
-        let name = $("#cardio-name").val();
-        let distance = $("#cardio-distance").val();
-        let duration = $("#cardio-duration").val();
+        // let name = $("#cardio-name").val();
+        // let distance = $("#cardio-distance").val();
+        // let duration = $("#cardio-duration").val();
         let Cardio = {
             name: name,
             distance: distance,
