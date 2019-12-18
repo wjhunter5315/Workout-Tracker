@@ -1,19 +1,19 @@
 $(document).ready(function() {
 
+    function makeCardioWorkout () {
 
-    function makeCardioWorkout (cardio) {
+        let name = $("#cardio-name").val();
+        let distance = $("#cardio-distance").val();
+        let duration = $("#cardio-duration").val();
         let Cardio = {
-            name: "",
-            distance: "",
-            duration: "",
+            name: name,
+            distance: distance,
+            duration: duration,
         };
-        Cardio.name = $("#cardio-name").val();
-        Cardio.distance = $("#cardio-sets").val();
-        Cardio.duration = $("#cardio-duration").val();
 
         $.ajax({
             method: "POST",
-            url: "/api/cardio",
+            url: "/cardio",
             data: Cardio
         }).catch((err) => {
             if (err) throw err;
@@ -25,4 +25,11 @@ $(document).ready(function() {
         makeCardioWorkout();
     });
     
+    $(".myWorkouts").on("click", function() {
+        window.location.href = "./workouts.html";
+    });
+
+    $(".homeBtn").on("click", function() {
+        window.location.href = "./home.html";
+    });
 })

@@ -56,3 +56,11 @@ body {
     font-size: 1rem;
     background-color: silver;
 }
+
+.myWokouts {
+    color: white;
+    background-color: DodgerBlue;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+}

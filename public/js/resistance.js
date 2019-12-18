@@ -1,56 +1,36 @@
-// $(document).ready(function() {
-//     let Resistance = {
-//         name: "",
-//         reps: "",
-//         sets: "",
-//         duration: "",
-//     };
+$(document).ready(function() {
 
-//     function makeResWorkout (resistance) {
-//         Resistance.name = $("#resistance-name").val();
-//         Resistance.sets = $("#resistance-sets").val();
-//         Resistance.reps = $("#resistance-reps").val();
-//         Resistance.duration = $("#resistance-duration").val();
+    function makeResWorkout () {
+        let name = $("#resistance-name").val();
+        let sets = $("#resistance-sets").val();
+        let reps = $("#resistance-reps").val();
+        let duration = $("#resistance-duration").val();
+        let Resistance = {
+            name: name,
+            sets: sets,
+            reps: reps,
+            duration: duration,
+        };
 
-//         $.ajax({
-//             method: "POST",
-//             url: "/resistance",
-//             data: Resistance
-//         }).catch((err) => {
-//             if (err) throw err;
-//         });
+        $.ajax({
+            method: "POST",
+            url: "/resistance",
+            data: Resistance
+        }).catch((err) => {
+            if (err) throw err;
+        });
     
-//     };
+    };
 
-//     $(".submitRes").on("click", function() {
-//         makeResWorkout();
-//     });
-    
-// })
-
-$(".submitRes").on("click", function() {
-    $.ajax({
-        type: "POST",
-        url: "/resistance",
-        dataType: "json",
-        data: {
-            name: $("#resistance-name").val(),
-            reps: $("#resistance-reps").val(),
-            sets: $("#resistance-sets").val(),
-            duration: $("#resistance-duration").val(),
-        },
-    })
-        .catch((err) => {
-        if (err) throw err;
-    })
-        .then(function(data) {
-            console.log(data);
+    $(".submitRes").on("click", function() {
+        makeResWorkout();
     });
 
     $(".myWorkouts").on("click", function() {
         window.location.href = "./workouts.html";
     });
+
     $(".homeBtn").on("click", function() {
         window.location.href = "./home.html";
-    })
+    });
 });

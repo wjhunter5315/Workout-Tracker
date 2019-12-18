@@ -55,16 +55,18 @@ app.post("/cardio", ({ body }, res) => {
   db.Cardio.create(body)
     .then(dbCardio => {
       res.json(dbCardio);
+      res.redirect("/cardio.html");
     })
     .catch(err => {
       res.json(err);
     });
 });
 
-app.post("/submit", ({ body }, res) => {
+app.post("/resistance", ({ body }, res) => {
   db.Resistance.create(body)
     .then(dbResistance => {
       res.json(dbResistance);
+      res.redirect("/resistance.html");
     })
     .catch(err => {
       res.json(err);
