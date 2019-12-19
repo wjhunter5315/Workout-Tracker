@@ -1,35 +1,59 @@
 $(document).ready(function() {
 
-    function getCardio (data) {
-
-        // let name = $("#cardio-name").val();
-        // let distance = $("#cardio-distance").val();
-        // let duration = $("#cardio-duration").val();
-      
+    function getCardio () {
 
         $.ajax({
             method: "GET",
             url: "/api/cardio",
-        }).then((data) => {
-            console.log(data);
-    
+        }).then((cardioData) => {
+            console.log(cardioData);
+            function showCardio() {
+                let workoutTemp, item, a, i; 
+                workoutTemp = document.getElementsByTagName("template")[0];
+                item = workoutTemp.content.querySelector("div");
+                for (i=0; i<cardioData.length; i++) {
+                    a = document.importNode(item, true);
+                    a.textContent += cardioData[i].name;
+                    document.body.prepend(a);
+                }
+            }
+            showCardio();
+            for(let i=0; i<cardioData.length; i++) {
+                // console.log(cardioData.name);
+                console.log(cardioData[i].name);
+            }
         })
     
     };
     getCardio();
 
     function getRes () {
-        // let name = $("#resistance-name").val();
-        // let sets = $("#resistance-sets").val();
-        // let reps = $("#resistance-reps").val();
-        // let duration = $("#resistance-duration").val();
+ 
         $.ajax({
             method: "GET",
             url: "/api/resistance",
-        }).then((data) => {
-            console.log(data);
-        })
+        }).then((resData) => {
+            console.log(resData);
+            function showResistance() {
+                let workoutTemp, item, a, i; 
+                workoutTemp = document.getElementsByTagName("template")[0];
+                item = workoutTemp.content.querySelector("div");
+                for (i=0; i<resData.length; i++) {
+                    a = document.importNode(item, true);
+                    a.textContent += resData[i].name;
+                    document.body.appendChild(a);
+                }
+            }
+            showResistance();
+            // for(let i=0; i<resData.length; i++) {
+            //     console.log(resData[i].name);
+            // }       
+        });
 
     };
     getRes();
+
+    $(".homeBtn").on("click", function() {
+        window.location.href = "./home.html";
+    });
 });

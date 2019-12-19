@@ -5,7 +5,7 @@ body {
 
 .grid {
     display: grid;
-    height: 60vh;
+    height: 80vh;
     grid-template-areas:
                         "navbar navbar navbar"
                         "sidebar maincontent maincontent"
