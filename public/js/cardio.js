@@ -13,7 +13,7 @@ $(document).ready(function() {
 
         $.ajax({
             method: "POST",
-            url: "/cardio",
+            url: "/api/cardio",
             data: Cardio
         }).catch((err) => {
             if (err) throw err;

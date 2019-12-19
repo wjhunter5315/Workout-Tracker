@@ -31,7 +31,7 @@ require("./routes/html-routes.js")(app);
 //     console.log(message);
 // });
 
-app.get("/cardio", (req, res) => {
+app.get("/api/cardio", (req, res) => {
     db.Cardio.find({})
       .then(dbCardio => {
         res.json(dbCardio);
@@ -41,7 +41,7 @@ app.get("/cardio", (req, res) => {
       });
 });
   
-app.get("/resistance", (req, res) => {
+app.get("/api/resistance", (req, res) => {
     db.Resistance.find({})
       .then(dbResistance => {
         res.json(dbResistance);
@@ -51,7 +51,7 @@ app.get("/resistance", (req, res) => {
       });
 });
 
-app.post("/cardio", ({ body }, res) => {
+app.post("/api/cardio", ({ body }, res) => {
   db.Cardio.create(body)
     .then(dbCardio => {
       res.json(dbCardio);
@@ -62,7 +62,7 @@ app.post("/cardio", ({ body }, res) => {
     });
 });
 
-app.post("/resistance", ({ body }, res) => {
+app.post("/api/resistance", ({ body }, res) => {
   db.Resistance.create(body)
     .then(dbResistance => {
       res.json(dbResistance);
